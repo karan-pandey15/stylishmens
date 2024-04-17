@@ -1,5 +1,5 @@
 import Image from "next/image";
-import "./facescanresult.css";
+import "./Facescanresult.css";
 import firstImg from "../../../../public/cartImg1.webp";
 import secondImg from "../../../../public/cartImg2.webp";
 import thirdImg from "../../../../public/cartImg1.webp";

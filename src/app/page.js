@@ -1,4 +1,4 @@
-
+"use client";
 import FirstBanner from "./components/banner1/page";
 import NewsBlogpage from "./components/banner10/page";
 import SecondBanner from "./components/banner2/page";
@@ -14,9 +14,13 @@ import Footer from "./components/footer/page";
 import Navbar from "./components/navbar/page";
 import "./styles.css";
 
-export default function Home() {
+export default function MainPage() {
+    
+      
+   
   return (
     <>
+    {/* <AddTocart /> */}
       <main className="w-full h-screen">
         <div className="hidden md:block">
           <div
@@ -81,3 +85,18 @@ export default function Home() {
     </>
   );
 }
+
+
+
+// "use client";
+// import AddTocart from './addtocart/page';
+// const Homepage = () => {
+//   return (
+//     <div>
+//       <h1>karan pandey</h1>
+//           <AddTocart />
+//     </div>
+//   )
+// }
+
+// export default Homepage;

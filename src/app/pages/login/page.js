@@ -3,6 +3,7 @@ import firstImg from "../../../../public/registerImg.png";
 import Link from "next/link";
 import "./loginpagestle.css";
 import Navbar from "@/app/components/navbar/page";
+import Footer from "@/app/components/footer/page";
 
 const LoginPage = () => {
 
@@ -33,6 +34,7 @@ const LoginPage = () => {
       </div>
     </div>
     </div>
+    <Footer />
     </>
   );
 };

@@ -9,7 +9,12 @@ import Link from "next/link";
 import MegaMenuImage from "../../../../public/Mega-Menu-1.png";
 import "./Navbar.css";
 
+import { useSelector } from 'react-redux';
+
 const Navbar = () => {
+  const item = useSelector((state)=>state.cart)
+    
+  
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isShopSubMenuOpen, setIsShopSubMenuOpen] = useState(false);
   const [isPagesSubMenuOpen, setIsPagesSubMenuOpen] = useState(false);
@@ -190,10 +195,10 @@ const Navbar = () => {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/pages/contactus"
                   className="mx-2 lg:mx-5 uppercase text-[14px] lg:text-base tracking-[.15em] font-medium"
                 >
-                  Gallery
+                  Contact Us
                 </Link>
               </li>
               <li
@@ -240,7 +245,13 @@ const Navbar = () => {
             </li>
             <li>
               <Link href="/pages/facedetection" >
+                {/* <MdAddShoppingCart className="md:mx-3 mx-1 text-xl" />
+                {items.length} */}
+                <Link className='navLink' style={{fontWeight:"bolder",marginRight:"7px"}} href={"/cart"}>
                 <MdAddShoppingCart className="md:mx-3 mx-1 text-xl" />
+                </Link>
+            <span style={{fontWeight:"bolder"}}>{item.length}</span>
+            
               </Link>
             </li>
             <li>
@@ -398,8 +409,8 @@ const Navbar = () => {
               </Link>
             </li>
             <li className="py-2">
-              <Link href="#" className="mx-5">
-                Gallery
+              <Link   href="/pages/contactus"  className="mx-5">
+                Contact Us
               </Link>
             </li>
             <li

@@ -3,6 +3,7 @@ import firstImg from "../../../../public/registerImg.png";
 import Link from "next/link";
 import "./Register.css";
 import Navbar from "@/app/components/navbar/page";
+import Footer from "@/app/components/footer/page";
 
 const RegisterPage = () => {
 
@@ -22,13 +23,19 @@ const RegisterPage = () => {
                 <input className="form_input" placeholder="Your FullName" />
                 <input className="form_input" placeholder="Your Email Adress" />
                 <input className="form_input" placeholder="Your Password" />
-                <button className="form_button" >SignUp</button>
-                <p className="form_para" >Already have an account <span style={{color:"blue",borderBottom:'1px solid blue'}} ><Link href="/pages/login">LogIn</Link></span> </p>
+                <Link href="/pages/contactus"><button className="form_button" >SignUp</button></Link>
+                <p className="form_para" >Already have an account <span style={{color:"blue",borderBottom:'1px solid blue'}} >
+                  <Link href="/pages/login">LogIn</Link></span> 
+
+                  </p>
+
              </form>
           </div>
               
       </div>
     </div>
+    <Footer />
+    
     </div>
     </>
   );

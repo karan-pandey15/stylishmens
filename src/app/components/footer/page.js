@@ -13,7 +13,7 @@ import "./footerstyle.css";
 
 const Footer = () => {
     return (
-        <div style={{ backgroundColor: "#FCF7EE"}}>
+        <div style={{ backgroundColor: "#FEE7D6"}}>
             <div >
                 <footer className="footer_container">
                     <div className="footer_heading_container">

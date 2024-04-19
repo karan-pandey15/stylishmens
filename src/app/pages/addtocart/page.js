@@ -4,9 +4,9 @@ import firstImg from "../../../../public/cartImg1.webp";
 import secondImg from "../../../../public/cartImg2.webp";
 import thirdImg from "../../../../public/cartImg3.webp";
 import fourthImg from "../../../../public/cartImg1.webp";
-
 import Navbar from "@/app/components/navbar/page";
 import Link from "next/link";
+import AddTocart from "@/app/addtocart/page";
 
 const Addtocart = () => {
   // Sample data array containing items
@@ -53,6 +53,7 @@ const Addtocart = () => {
   return (
     <div >
     <Navbar />
+    <AddTocart />
     <div className="Add_cart_container">
       <div className="Add_cart_inner_container">
         {items.map((item) => (

@@ -52,9 +52,9 @@ const Addtocart = () => {
 
   return (
     <div >
-    <Navbar />
     <AddTocart />
-    <div className="Add_cart_container">
+
+    {/* <div className="Add_cart_container">
       <div className="Add_cart_inner_container">
         {items.map((item) => (
           <div key={item.id} className="add_cart_main_container">
@@ -80,7 +80,7 @@ const Addtocart = () => {
           </div>
         ))}
       </div>
-    </div>
+    </div> */}
     </div>
   );
 };

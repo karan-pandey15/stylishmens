@@ -1,31 +1,23 @@
 import Link from "next/link";
-import { MdOutlineLocationOn } from "react-icons/md";
-import {
-    AiFillPhone,
-    AiOutlineMail,
-    AiFillFacebook,
-    AiFillYoutube,
-} from "react-icons/ai";
-import { TbDeviceLandlinePhone } from "react-icons/tb";
-import { BsInstagram } from "react-icons/bs";
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import { IoHomeOutline } from "react-icons/io5";
+import { BiCategory } from "react-icons/bi";
+import { BsShop } from "react-icons/bs";
+import { FaAward } from "react-icons/fa6";
+import { FaWhatsapp } from "react-icons/fa";
+
 import "./footerstyle.css";
 
 const Footer = () => {
     return (
-        <div style={{ backgroundColor: "#FEE7D6"}}>
-            <div >
+        <div style={{ backgroundColor: "#fff" }}>
+            <div className="footer_main_container" >
                 <footer className="footer_container">
                     <div className="footer_heading_container">
                         <div className="">
-                            <h1 className="footer_main_heading">STYLISHHIM</h1>
+                            <h1 className="footer_main_heading">JEMEL</h1>
                             <p className="footer_main_para">Sed viverra tellus in hac habitasse platea dictumst vestibulum. Mauris augue neque gravida in. In cursus turpis massa tincidunt.</p>
                         </div>
                     </div>
-
-
-
-
                     <div className="link_container">
                         <h5
                             style={{
@@ -118,10 +110,10 @@ const Footer = () => {
                             </li>
                             <li className=" ">
                                 <Link
-                                    href="/pages/productregister"
+                                    href="#"
                                     className=""
                                 >
-                                    List Products
+                                    Checkout
                                 </Link>
 
                             </li>
@@ -147,7 +139,7 @@ const Footer = () => {
                                     href="#"
                                     className=""
                                 >
-                                     Store Information
+                                    Store Information
                                 </Link>
                             </li>
 
@@ -199,7 +191,7 @@ const Footer = () => {
                         <div className="">
                             <h1 className="footer_input_heading">Newsletter</h1>
                             <p className="footer_input_para">Signup for our newsletter to stay up to date on sales and events.</p>
-                            <input placeholder="Email Address" className="footer_input"/>
+                            <input placeholder="Email Address" className="footer_input" />
                         </div>
                     </div>
 
@@ -252,6 +244,50 @@ const Footer = () => {
             </ul>
           </div> */}
                 </footer>
+            </div>
+            <div className="small_footer_main_container" >
+                <div className="small_footer_child_container" >
+
+                    <Link href='/' >
+
+                    <div className="small_container" >
+                         <IoHomeOutline />
+                         <p className="small_footer_para" >HOME</p>
+                    </div>
+                    </Link>
+
+                    <Link href='/pages/addtocart' >
+                    <div className="small_container" >
+                         <BiCategory />
+                         <p  className="small_footer_para" >Category</p>
+                    </div>
+                    </Link>
+
+
+                    <Link href='/pages/productregister' >
+                        
+                    <div className="middle_container" >
+                         <FaAward />
+                         <p  className="small_footer_para" >List Product</p>
+                    </div>
+                    </Link>
+
+
+                    <Link href='/pages/addtocart' >
+                    <div className="small_container" >
+                         <BsShop />
+                         <p  className="small_footer_para" >Shop</p>
+                    </div>
+                    </Link>
+
+                    
+                    <Link href='/pages/contactus' >
+                    <div className="small_container" >
+                         <FaWhatsapp />
+                         <p  className="small_footer_para" >Chat</p>
+                    </div>
+                    </Link>
+                </div>
             </div>
         </div>
     );

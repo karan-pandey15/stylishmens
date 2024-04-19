@@ -1,8 +1,6 @@
 "use client";
-import React,{useState,useEffect} from 'react'
+// import React,{useState,useEffect} from 'react'
 import { useDispatch } from 'react-redux';
-// import { add } from '@/Redux/Cartslice';
-// import { add } from '@/Redux/Cartslice';
 import {add} from '../../Redux/Cartslice';
 import firstImg from "../../../public/cartImg1.webp";
 import secondImg from "../../../public/cartImg2.webp";
@@ -10,11 +8,13 @@ import thirdImg from "../../../public/cartImg3.webp";
 import fourthImg from "../../../public/cartImg1.webp";
 import Image from "next/image";
 import "./Addtocarts.css"
-import Navbar from '../componet/Navbar';
+import Navbar from '../components/navbar/page';
+import Footer from '../components/footer/page';
 
 
 const AddTocart = () => {
     // Sample data array containing items
+
     const items = [
       {
         id: 1,
@@ -54,39 +54,19 @@ const AddTocart = () => {
         },
       // Add more items here if needed
     ];
-  // const [products ,setproducts]=useState([])
+
   const dispatch =useDispatch();
-
-
-  // const getproducts =async()=>{
-  //   const res =await fetch("https://fakestoreapi.com/products");
-  //   const data =await res.json();
-  //   setproducts(data);
-  // }
 
   const handleadd =(product)=>{
      dispatch(add(product));
   }
 
-  // useEffect(()=>{
-  //  getproducts();
-  // },[])
+  
   
   return (
-    // <div className='productsWrapper'>
-    //       {
-    //         products.map((product)=>(
-    //           <div key={product.id} className='cart_sec'>
-    //               <img src={product.image} alt='cart_img'/>
-    //               <h4>{product.title}</h4>
-    //               <h5>{product.price}</h5>
-    //               <button className='cart_btn' onClick={()=>handleadd(product)}>Add to cart</button>
-    //           </div>
-    //         ))
-    //       }
-    // </div>
+    <>
+    <Navbar />
     <div >
-    {/* <Navbar /> */}
     <div className="Add_cart_container">
       <div className="Add_cart_inner_container">
         {items.map((item) => (
@@ -114,8 +94,11 @@ const AddTocart = () => {
         ))}
       </div>
     </div>
+    
     </div>
-
+    <Footer />
+    </>
+    
   )
 }
 

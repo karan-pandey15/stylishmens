@@ -182,11 +182,6 @@ const Footer = () => {
                         </ul>
                     </div>
 
-
-
-
-
-
                     <div className="footer_input_container">
                         <div className="">
                             <h1 className="footer_input_heading">Newsletter</h1>
@@ -194,8 +189,6 @@ const Footer = () => {
                             <input placeholder="Email Address" className="footer_input" />
                         </div>
                     </div>
-
-
 
 
                     {/* <div className="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">

@@ -107,8 +107,8 @@ const Cartpage = () => {
                 </div>
             ) : (
                 <div className='cartWrapper'>
-                    {cartItems.map((item) => (
-                        <div className='main_cart_div' >
+                    {cartItems.map((item,id) => (
+                        <div className='main_cart_div' key={id} >
                             <div className='child_cart_div' >
                             <img className='cart_img_style'  src={item.image.src} alt='img' />
                             <h5 className='cart_heading' >{item.title}</h5>

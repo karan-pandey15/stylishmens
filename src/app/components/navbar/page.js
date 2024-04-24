@@ -44,7 +44,7 @@ const Navbar = () => {
       })
       .catch((err) => {
         console.log(err);
-        router.push("/pages/login");
+        // router.push("/pages/login");
       });
   }, [router]);
 

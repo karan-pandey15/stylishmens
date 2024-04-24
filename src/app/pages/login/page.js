@@ -84,7 +84,7 @@ const LoginPage = () => {
                 className="form_input" placeholder="Your Password"
                 
                  />
-                 <span
+                 {/* <span
                         onClick={togglePasswordVisibility}
                         style={{
                           position: "absolute",
@@ -123,7 +123,7 @@ const LoginPage = () => {
                             Show
                           </span>
                         )}
-                      </span>
+                      </span> */}
                 <button 
                  type="submit"
                  onClick={handleSubmit}

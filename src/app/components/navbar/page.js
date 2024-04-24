@@ -39,7 +39,7 @@ const Navbar = () => {
         } else {
           setAuth(false);
           setMessage(res.data.Error);
-          router.push("/pages/login");
+          // router.push("/pages/login");
         }
       })
       .catch((err) => {

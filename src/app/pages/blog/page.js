@@ -2,7 +2,6 @@ import React from "react";
 import Image from "next/image";
 import Navbar from "@/app/components/navbar/page";
 import "./BlogpageStyle.css"
-
 import firstImg from "../../../../public/blog-2.webp";
 import secondImg from "../../../../public/blog-1.webp";
 import thirdImg from "../../../../public/blog-3.webp";

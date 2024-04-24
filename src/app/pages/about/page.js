@@ -8,6 +8,7 @@ import firstImg from "../../../../public/about-1.jpg";
 import secondImg from "../../../../public/about-2.jpg";
 import thirdImg from "../../../../public/about-3.jpg";
 import fourthImg from "../../../../public/about-7.jpg";
+import Footer from "@/app/components/footer/page";
 
 const About = () => {
 
@@ -100,6 +101,7 @@ const About = () => {
             </div>
             
         </div>
+        <Footer />
         </>
         
     );

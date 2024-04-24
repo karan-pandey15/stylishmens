@@ -8,6 +8,7 @@ import thirdImg from "../../../public/cartImg3.webp";
 import fourthImg from "../../../public/cartImg1.webp";
 import Image from "next/image";
 import "./Addtocarts.css"
+import Link from 'next/link';
 import Navbar from '../components/navbar/page';
 import Footer from '../components/footer/page';
 
@@ -20,37 +21,37 @@ const AddTocart = () => {
         id: 1,
         image: firstImg,
         title: " Zirconia Studded Sapphire Blue.",
-        price: "$5.00 - $10.00",
+        price: 300,
       },
       {
         id: 2,
         image: secondImg,
         title: "Gold Plated Cubic Zirconia",
-        price: "$5.00 - $10.00",
+        price: 300,
       },
       {
         id: 3,
         image: thirdImg,
         title: "Studded Sapphire Blue. curk",
-        price: "$5.00 - $10.00",
+        price: 300,
       },
       {
         id: 4,
         image: fourthImg,
         title: "Gold Plated Cubic Zirconia",
-        price: "$5.00 - $10.00",
+        price: 300,
       },
       {
           id: 5,
           image: firstImg,
           title: " Zirconia Studded Sapphire Blue.",
-          price: "$5.00 - $10.00",
+          price: 300,
         },
         {
           id: 6,
           image: secondImg,
           title: "Gold Plated Cubic Zirconia",
-          price: "$5.00 - $10.00",
+          price: 300,
         },
       // Add more items here if needed
     ];
@@ -72,9 +73,9 @@ const AddTocart = () => {
         {items.map((item) => (
           <div key={item.id} className="add_cart_main_container">
             <div className="add_cart_image">
-              {/* <Link href='/pages/productcheck' > */}
+              <Link href='/pages/productcheck' >
               <Image src={item.image} alt="photoImage" />
-              {/* </Link> */}
+              </Link>
             </div>
             <div className="add_cart_test">
               <p className="cart_heading">{item.title}</p>

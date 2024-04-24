@@ -14,7 +14,7 @@ const Footer = () => {
                 <footer className="footer_container">
                     <div className="footer_heading_container">
                         <div className="">
-                            <h1 className="footer_main_heading">JEMEL</h1>
+                            <h1 className="footer_main_heading">StylishHim</h1>
                             <p className="footer_main_para">Sed viverra tellus in hac habitasse platea dictumst vestibulum. Mauris augue neque gravida in. In cursus turpis massa tincidunt.</p>
                         </div>
                     </div>
@@ -249,10 +249,10 @@ const Footer = () => {
                     </div>
                     </Link>
 
-                    <Link href='/pages/addtocart' >
+                    <Link href='/pages/blog' >
                     <div className="small_container" >
                          <BiCategory />
-                         <p  className="small_footer_para" >Category</p>
+                         <p  className="small_footer_para" >Blog</p>
                     </div>
                     </Link>
 

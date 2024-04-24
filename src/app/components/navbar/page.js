@@ -1,5 +1,7 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useRouter } from "next/navigation";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { MdKeyboardArrowDown, MdAddShoppingCart } from "react-icons/md";
 import { FaUser, FaHeart } from "react-icons/fa";
@@ -13,11 +15,51 @@ import { useSelector } from 'react-redux';
 
 const Navbar = () => {
   const item = useSelector((state)=>state.cart)
-    
-  
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isShopSubMenuOpen, setIsShopSubMenuOpen] = useState(false);
   const [isPagesSubMenuOpen, setIsPagesSubMenuOpen] = useState(false);
+
+  const [auth, setAuth] = useState(false);
+  const [message, setMessage] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+
+  const router = useRouter();
+
+  axios.defaults.withCredentials = true;
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/api/get_customer_data")
+      .then((res) => {
+        if (res.data.Status === "Success") {
+          setAuth(true);
+          setName(res.data.name);
+          setEmail(res.data.email);
+        } else {
+          setAuth(false);
+          setMessage(res.data.Error);
+          router.push("/pages/login");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+        router.push("/pages/login");
+      });
+  }, [router]);
+
+  const handleLogout = () => {
+    axios
+      .get("http://localhost:5000/api/cust_logout")
+      .then((res) => {
+        if (res.data.Status === "Success") {
+          localStorage.clear();
+          router.push("/pages/customersignin");
+        }
+      })
+      .catch((err) => console.log(err));
+  };
+
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -187,7 +229,7 @@ const Navbar = () => {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/pages/blog"
                   className="mx-2 lg:mx-5 uppercase text-[14px] lg:text-base tracking-[.15em] font-medium"
                 >
                   Blog
@@ -235,12 +277,22 @@ const Navbar = () => {
                   </div>
                 )}
               </li>
+
+            <li>
+                <Link
+                    href="/pages/customerorder"
+                  className="mx-2 lg:mx-5 uppercase text-[14px] lg:text-base tracking-[.15em] font-medium"
+                >
+            My Orders
+                </Link>
+              </li>
+            
             </ul>
           </div>
           <ul className="flex items-center">
             <li>
               <Link href="/pages/register">
-                <FaUser className="md:mx-3 mx-1 text-xl" />
+                {auth ?  `${name}` : <FaUser className="md:mx-3 mx-1 text-xl" />}
               </Link>
             </li>
             <li>
@@ -404,7 +456,7 @@ const Navbar = () => {
               )}
             </li>
             <li className="py-2">
-              <Link href="#" className="mx-5">
+              <Link href="/pages/blog" className="mx-5">
                 Blog
               </Link>
             </li>
@@ -422,6 +474,7 @@ const Navbar = () => {
                 <span>Pages</span>
                 <MdKeyboardArrowDown className="text-lg mt-1" />
               </Link>
+
               {isPagesSubMenuOpen && (
                 <div
                   className="absolute bg-white p-4 w-full"
@@ -443,6 +496,14 @@ const Navbar = () => {
                 </div>
               )}
             </li>
+
+            
+            <li className="py-2">
+              <Link   href="/pages/customerorder"  className="mx-5">
+               My Orders
+              </Link>
+            </li>
+
           </ul>
         </div>
       </header>

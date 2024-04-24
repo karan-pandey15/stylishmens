@@ -9,6 +9,7 @@ import thirdImg from "../../../../public/cartImg3.webp";
 import fourthImg from "../../../../public/cartImg1.webp";
 import Navbar from "@/app/components/navbar/page";
 import Moreproduct from "../moreproduct/page";
+import Footer from "@/app/components/footer/page";
 
 
 
@@ -21,10 +22,10 @@ export default function Product() {
       img: secondImg,
     },
     {
-      img: thirdImg,
+      img: firstImg,
     },
     {
-      img: fourthImg,
+      img: secondImg,
     },
   ];
 
@@ -77,6 +78,7 @@ export default function Product() {
         </div>
       </div>
         <Moreproduct />
+        <Footer />
     </>
   );
 }
